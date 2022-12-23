@@ -9,7 +9,8 @@ import com.halil.pianogame.databinding.ShopRecyclerViewRowBinding
 import com.halil.pianogame.listener.ProductListener
 import com.halil.pianogame.modul.ProductModul
 
-class ShopRecyclerViewAdapter(var list: ArrayList<ProductModul>,var listener:ProductListener):RecyclerView.Adapter<ShopRecyclerViewAdapter.viewHolder>() {
+class ShopRecyclerViewAdapter(var list: ArrayList<ProductModul>,var listener:ProductListener):
+    RecyclerView.Adapter<ShopRecyclerViewAdapter.viewHolder>() {
 
     class viewHolder(var view: ShopRecyclerViewRowBinding):RecyclerView.ViewHolder(view.root){
         fun changeProduct(productModul: ProductModul){

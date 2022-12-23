@@ -17,20 +17,27 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         observeLiveData()
         var uri= MySharedPreferences(applicationContext).getBackGroundMusicUri()
-        backgroundMediaPlayerLiveData.value = if (uri!=null)  MediaPlayer.create(applicationContext,uri) else BACKGROUND_MUSICPLAYER(applicationContext)
-
+       // uri=null
+        if(backgroundMediaPlayerLiveData.value==null) {
+            backgroundMediaPlayerLiveData.value = if (uri != null) MediaPlayer.create(
+                applicationContext,
+                uri
+            ) else BACKGROUND_MUSICPLAYER(applicationContext)
+        }
          Log.e("HomeActivity,", "onCreate: "+ BACKGROUND_MUSICPLAYER(this) )
     }
     var backgroundMediaPlayer:MediaPlayer?=null
+
     fun observeLiveData(){
 
         backgroundMediaPlayerLiveData.observe(this, Observer {
-            backgroundMediaPlayer?.stop()
-            backgroundMediaPlayer?.release()
-             backgroundMediaPlayer =it
-            backgroundMediaPlayer?.isLooping=true
-            mediaPlayer=backgroundMediaPlayer
-
+            if(!it.isPlaying) {
+                backgroundMediaPlayer?.stop()
+                backgroundMediaPlayer?.release()
+                backgroundMediaPlayer = it
+                backgroundMediaPlayer?.isLooping = true
+                mediaPlayer = backgroundMediaPlayer
+            }
            // backgroundMediaPlayer.setVolume(0.09f,0.09f)
             backgroundMediaPlayer?.start()
         })

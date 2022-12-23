@@ -57,9 +57,6 @@ val LAUNCH_SPEED=7.6
 
                // Log.d(TAG, "run: "+selectedRow.toString()+" "+randomColumn)
 
-
-
-
                 selectedRow?.let {
                 run(randomColumn, it)
 

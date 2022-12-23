@@ -17,7 +17,8 @@ class Application(): Application() {
 
         var uri=MySharedPreferences(applicationContext).getBackGroundMusicUri()
 
-        backgroundMediaPlayerLiveData.value = if (uri!=null)  MediaPlayer.create(applicationContext,uri) else BACKGROUND_MUSICPLAYER(applicationContext)
+       // backgroundMediaPlayerLiveData.value = if (uri!=null)  MediaPlayer.create(applicationContext,uri) else BACKGROUND_MUSICPLAYER(applicationContext)
+        backgroundMediaPlayerLiveData.value= BACKGROUND_MUSICPLAYER(applicationContext)
         var backgroundMediaPlayer =
             backgroundMediaPlayerLiveData.value ?: BACKGROUND_MUSICPLAYER(applicationContext)
         backgroundMediaPlayer.isLooping = true
