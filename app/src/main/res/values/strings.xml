@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" >Piano Game</string>
+    <string name="play_button_text">Play</string>
+    <string name="store_button_text">Store</string>
+    <string name="use_button_text">Use</string>
+    <string name="buy_button_text">Buy</string>
+</resources>

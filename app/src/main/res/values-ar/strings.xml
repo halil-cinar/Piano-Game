@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" >Piano Game</string>
+    <string name="play_button_text">لعب</string>
+    <string name="store_button_text">مركز تسوق</string>
+    <string name="use_button_text">يستخدم</string>
+    <string name="buy_button_text">اشتري</string>
+</resources>
