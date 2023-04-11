@@ -44,16 +44,20 @@ class HomeActivity : AppCompatActivity() {
         })
     }
 
+    override fun onPause() {
+        super.onPause()
+        backgroundMediaPlayer?.pause()
+    }
     override fun onStop() {
         super.onStop()
 
-        //backgroundMediaPlayer?.pause()
+
 
     }
 
     override fun onStart() {
         super.onStart()
-        //backgroundMediaPlayer?.start()
+        backgroundMediaPlayer?.start()
     }
 companion object{
     var mediaPlayer:MediaPlayer?=null

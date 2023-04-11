@@ -19,18 +19,23 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         finish()
         startActivity(Intent(this,HomeActivity::class.java))
-
+        var mediaPlayer= backgroundMediaPlayerLiveData.value
+        mediaPlayer?.pause()
     }
 
     override fun onStop() {
         super.onStop()
-       // HomeActivity.mediaPlayer?.pause()
+
+       //HomeActivity.mediaPlayer?.pause()
 
     }
 
     override fun onStart() {
         super.onStart()
-        //HomeActivity.mediaPlayer?.start()
+        var mediaPlayer= backgroundMediaPlayerLiveData.value
+mediaPlayer?.isLooping=true
+        mediaPlayer?.start()
+       // HomeActivity.mediaPlayer?.start()
     }
 
 }
