@@ -85,7 +85,7 @@ class MySharedPreferences {
     fun getBackGroundMusicUri():Uri?{
 
             var uriStr=sharedPreferences?.getString(BACKGROUND_MUSIC_KEY,null)
-        Log.e("application", "onCreateakmk: "+uriStr )
+        Log.e("application", "onCreateak: "+uriStr )
             if(uriStr!=null){
                 return Uri.parse(uriStr)
             }else{

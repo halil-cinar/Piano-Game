@@ -28,7 +28,6 @@ class Application(): Application() {
 
 
     }
-
     override fun onTerminate() {
         super.onTerminate()
         backgroundMediaPlayerLiveData.value?.stop()

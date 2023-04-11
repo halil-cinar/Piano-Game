@@ -18,13 +18,14 @@ class HomeActivity : AppCompatActivity() {
         observeLiveData()
         var uri= MySharedPreferences(applicationContext).getBackGroundMusicUri()
        // uri=null
-        if(backgroundMediaPlayerLiveData.value==null) {
+
+        if(backgroundMediaPlayerLiveData.value!=null) {
             backgroundMediaPlayerLiveData.value = if (uri != null) MediaPlayer.create(
                 applicationContext,
                 uri
             ) else BACKGROUND_MUSICPLAYER(applicationContext)
         }
-         Log.e("HomeActivity,", "onCreate: "+ BACKGROUND_MUSICPLAYER(this) )
+         Log.e("HomeActivity,", "onCreate: "+ uri )
     }
     var backgroundMediaPlayer:MediaPlayer?=null
 
@@ -45,6 +46,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+
         //backgroundMediaPlayer?.pause()
 
     }

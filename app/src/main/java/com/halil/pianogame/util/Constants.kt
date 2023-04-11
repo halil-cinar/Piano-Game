@@ -41,7 +41,7 @@ fun getProductList(context: Context): ArrayList<ProductModul> {
     var file= Uri.Builder()
         .scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
         .authority(context.packageName)
-        .appendPath("${R.raw.background}")
+        .appendPath("${R.raw.background_music}")
         .build()
     println(file)
     val fileurl=file
@@ -62,4 +62,4 @@ fun getImageList(context: Context): ArrayList<ImageModel> {
     list.add(ImageModel(uuid, Gson().toJson(stream2.toByteArray())))
     return list
 }
-fun BACKGROUND_MUSICPLAYER(context: Context)=MediaPlayer.create(context,R.raw.background)
+fun BACKGROUND_MUSICPLAYER(context: Context)=MediaPlayer.create(context,R.raw.background_music)
